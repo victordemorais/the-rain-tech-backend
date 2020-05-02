@@ -4,12 +4,16 @@ const auth = require("../Utils/auth");
 
 module.exports = {
   async login(request, response) {
+    const table = request.body.isInvestor ? "investors" : "professionals";
+
+    console.log("table", table);
+
     try {
       const { email, password } = request.body;
 
       let content = "";
 
-      await connection("users")
+      await connection(table)
         .where("email", email)
         .first()
         .then(async function (row) {

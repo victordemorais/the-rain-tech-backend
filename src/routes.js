@@ -1,17 +1,20 @@
 const express = require("express");
 
-const UsersController = require("../src/controller/UsersController");
+const InvestorsController = require("./controller/InvestorsController");
+const ProfessionalsController = require("./controller/ProfessionalsController");
 const SessionsController = require("../src/controller/SessionsController");
 
 const routes = express.Router();
 
-routes.get("/", UsersController.index);
+routes.get("/investor", InvestorsController.index);
+routes.post("/investor", InvestorsController.create);
+routes.delete("/investor/:id", InvestorsController.delete);
+routes.put("/investor/:id", InvestorsController.update);
 
-routes.post("/", UsersController.create);
-
-routes.delete("/:id", UsersController.delete);
-
-routes.put("/:id", UsersController.update);
+routes.get("/professional", ProfessionalsController.index);
+routes.post("/professional", ProfessionalsController.create);
+routes.delete("/professional/:id", ProfessionalsController.delete);
+routes.put("/professional/:id", ProfessionalsController.update);
 
 routes.post("/login", SessionsController.login);
 

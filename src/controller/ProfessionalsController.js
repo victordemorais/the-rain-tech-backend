@@ -7,7 +7,7 @@ module.exports = {
       const { name, email, password, phone, city, uf } = request.body;
       const hashedPassword = await bcrypt.hash(password, 10);
 
-      await connection("users").insert({
+      await connection("professionals").insert({
         name,
         email,
         password: hashedPassword,
@@ -32,10 +32,10 @@ module.exports = {
 
   async index(request, response) {
     try {
-      const users = await connection("users").select("*");
-      return response.json(users);
+      const professionals = await connection("professionals").select("*");
+      return response.json(professionals);
     } catch (error) {
-      response.status(500).json({ error: "Error during get users." });
+      response.status(500).json({ error: "Error during get professionals." });
     }
   },
 
@@ -43,9 +43,9 @@ module.exports = {
     try {
       const { id } = request.params;
 
-      await connection("users").where("id", id).del();
+      await connection("professionals").where("id", id).del();
 
-      return response.json({ msg: `User ${id} deleted!` });
+      return response.json({ msg: `Professional ${id} deleted!` });
     } catch (error) {
       response.status(500).json({ error: "Error during delete." });
     }
@@ -57,7 +57,7 @@ module.exports = {
 
       const { name, email, phone, city, uf } = request.body;
 
-      await connection("users").where("id", id).update({
+      await connection("professionals").where("id", id).update({
         name,
         email,
         phone,

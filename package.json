@@ -7,7 +7,7 @@
     "knex-migrate": "knex migrate:latest",
     "knex-rollback": "knex migrate:rollback",
     "test": "test",
-    "dev": "nodemon ./src/index.js",
+    "dev": "knex migrate:latest & nodemon ./src/index.js",
     "start": "node ./src/index.js"
   },
   "author": "the rain tech",
