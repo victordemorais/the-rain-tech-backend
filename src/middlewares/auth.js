@@ -3,8 +3,6 @@ const authConfig = require("../utils/authConfig");
 const { promisify } = require("util");
 
 module.exports = async (request, response, next) => {
-  console.log("teste entrou");
-
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
@@ -18,7 +16,6 @@ module.exports = async (request, response, next) => {
 
     request.userId = decoded.id;
 
-    console.log("decoded", decoded);
     return next();
   } catch (error) {
     response.status(401).json({

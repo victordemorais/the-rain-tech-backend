@@ -1,10 +1,20 @@
 const connection = require("../data/connection");
 const bcrypt = require("bcrypt");
+const profileRecommender = require("../utils/profileRecommender");
 
 module.exports = {
   async create(request, response) {
     try {
-      const { name, email, password, phone, city, uf } = request.body;
+      const {
+        name,
+        email,
+        password,
+        phone,
+        city,
+        uf,
+        investor_profile,
+      } = request.body;
+
       const hashedPassword = await bcrypt.hash(password, 10);
 
       await connection("professionals").insert({
@@ -14,6 +24,7 @@ module.exports = {
         phone,
         city,
         uf,
+        investor_profile,
       });
 
       return response.json({
@@ -23,6 +34,7 @@ module.exports = {
         phone,
         city,
         uf,
+        investor_profile,
         msg: "User created with success!",
       });
     } catch (error) {
@@ -55,7 +67,7 @@ module.exports = {
     try {
       const { id } = request.params;
 
-      const { name, email, phone, city, uf } = request.body;
+      const { name, email, phone, city, uf, investor_profile } = request.body;
 
       await connection("professionals").where("id", id).update({
         name,
@@ -63,6 +75,7 @@ module.exports = {
         phone,
         city,
         uf,
+        investor_profile,
       });
 
       return response.json({
@@ -71,10 +84,30 @@ module.exports = {
         phone,
         city,
         uf,
+        investor_profile,
         msg: "User updated with success!",
       });
     } catch (error) {
       response.status(500).json({ error: "Error during update." });
+    }
+  },
+
+  async getRecommendedInvestors(request, response) {
+    const user = await connection("professionals")
+      .select("investor_profile")
+      .where("id", request.userId);
+
+    try {
+      const investors = await connection("investors")
+        .select("*")
+        .from("investors")
+        .orderByRaw(
+          profileRecommender.getRecommendationQuery(user[0].investor_profile)
+        );
+
+      return response.json({ investors });
+    } catch (error) {
+      response.status(500).json({ error: "Error during get investors." });
     }
   },
 };

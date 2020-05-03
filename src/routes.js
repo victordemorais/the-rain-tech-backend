@@ -8,16 +8,33 @@ const authMiddleware = require("./middlewares/auth");
 
 const routes = express.Router();
 
+// Investors api
 routes.get("/investor", InvestorsController.index);
 routes.post("/investor", InvestorsController.create);
-routes.delete("/investor/:id", InvestorsController.delete);
-routes.put("/investor/:id", InvestorsController.update);
+routes.delete("/investor/:id", authMiddleware, InvestorsController.delete);
+routes.put("/investor/:id", authMiddleware, InvestorsController.update);
+routes.get(
+  "/investor/recommended",
+  authMiddleware,
+  InvestorsController.getRecommendedProfessionals
+);
 
+// Professionals api
 routes.get("/professional", ProfessionalsController.index);
 routes.post("/professional", ProfessionalsController.create);
-routes.delete("/professional/:id", ProfessionalsController.delete);
-routes.put("/professional/:id", ProfessionalsController.update);
+routes.delete(
+  "/professional/:id",
+  authMiddleware,
+  ProfessionalsController.delete
+);
+routes.put("/professional/:id", authMiddleware, ProfessionalsController.update);
+routes.get(
+  "/professional/recommended",
+  authMiddleware,
+  ProfessionalsController.getRecommendedInvestors
+);
 
+// Session api
 routes.post("/login", SessionsController.login);
 
 routes.get("/token-test", authMiddleware, (request, response) =>

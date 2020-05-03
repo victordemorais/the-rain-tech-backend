@@ -6,8 +6,6 @@ module.exports = {
   async login(request, response) {
     const table = request.body.isInvestor ? "investors" : "professionals";
 
-    console.log("table", table);
-
     try {
       const { email, password } = request.body;
 
