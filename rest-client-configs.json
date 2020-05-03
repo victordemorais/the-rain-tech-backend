@@ -1,7 +1,7 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-05-03T00:44:30.397Z",
+  "__export_date": "2020-05-03T22:29:12.736Z",
   "__export_source": "insomnia.desktop.app:v7.1.1",
   "resources": [
     {
@@ -40,26 +40,20 @@
       "_type": "workspace"
     },
     {
-      "_id": "req_03e2e518e0d04431bee3860af045828d",
-      "authentication": {},
-      "body": {
-        "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"name teste3\",\n\t\"email\": \"email teste3\",\n\t\"password\": \"pass3\",\n\t\"phone\": \"phone teste3\",\n\t\"city\": \"city teste3\",\n\t\"uf\": \"ts\"\n}"
+      "_id": "req_e34d09c6be214b09adb315dd3a3f0b16",
+      "authentication": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTU4ODU0MzY1NiwiZXhwIjoxNTg5MTQ4NDU2fQ.rOS-3-DNvh1z8DQgsQU9kWWCSEZT_rtOaYsdn3m_n58",
+        "type": "bearer"
       },
-      "created": 1588449516995,
+      "body": {},
+      "created": 1588531914386,
       "description": "",
-      "headers": [
-        {
-          "id": "pair_558cd6d2bed94279804eb0d67b1f033d",
-          "name": "Content-Type",
-          "value": "application/json"
-        }
-      ],
+      "headers": [],
       "isPrivate": false,
-      "metaSortKey": -1588184345143.5,
-      "method": "POST",
-      "modified": 1588464756078,
-      "name": "create",
+      "metaSortKey": -1588184345193.5,
+      "method": "GET",
+      "modified": 1588543663917,
+      "name": "getInvestorsRecommended",
       "parameters": [],
       "parentId": "fld_4c524678afa241abb1113faa31fca5b8",
       "settingDisableRenderRequestBody": false,
@@ -68,7 +62,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ base_url  }}/professional/",
+      "url": "{{ base_url  }}/professional/recommended",
       "_type": "request"
     },
     {
@@ -84,11 +78,43 @@
       "_type": "request_group"
     },
     {
+      "_id": "req_03e2e518e0d04431bee3860af045828d",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"pluto professional\",\n\t\"email\": \"pluto@email.com\",\n\t\"password\": \"password\",\n\t\"phone\": \"55 444 666666\",\n\t\"city\": \"cidade do pluto\",\n\t\"uf\": \"ts\",\n\t\"investor_profile\": \"conservative\"\n}"
+      },
+      "created": 1588449516995,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_558cd6d2bed94279804eb0d67b1f033d",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1588184345143.5,
+      "method": "POST",
+      "modified": 1588535000370,
+      "name": "create",
+      "parameters": [],
+      "parentId": "fld_4c524678afa241abb1113faa31fca5b8",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/professional/",
+      "_type": "request"
+    },
+    {
       "_id": "req_e7ad492898b1469284db618336debe90",
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"name teste20\",\n\t\"email\": \"email teste20\",\n\t\"phone\": \"phone teste20\",\n\t\"city\": \"city teste20\",\n\t\"uf\": \"ts20\"\n}"
+        "text": "  {\n    \"phone\": \"teste\",\n    \"city\": \"teste\",\n    \"investor_profile\": \"agressive\"\n  }"
       },
       "created": 1588449522348,
       "description": "",
@@ -102,7 +128,7 @@
       "isPrivate": false,
       "metaSortKey": -1588184345118.5,
       "method": "PUT",
-      "modified": 1588449561638,
+      "modified": 1588530390499,
       "name": "update",
       "parameters": [],
       "parentId": "fld_4c524678afa241abb1113faa31fca5b8",
@@ -112,12 +138,15 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ base_url  }}/professional/2",
+      "url": "{{ base_url  }}/professional/1",
       "_type": "request"
     },
     {
       "_id": "req_a45ad5aa9d1e49919428d96cba24b631",
-      "authentication": {},
+      "authentication": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg4NTMyMDcwLCJleHAiOjE1ODkxMzY4NzB9.5NWlrl62tEz2QLN3xgBmPUrz-GKqyaaiRccKRwQ11-c",
+        "type": "bearer"
+      },
       "body": {},
       "created": 1588449527900,
       "description": "",
@@ -125,7 +154,7 @@
       "isPrivate": false,
       "metaSortKey": -1588184345106,
       "method": "DELETE",
-      "modified": 1588449564117,
+      "modified": 1588532577943,
       "name": "remove",
       "parameters": [],
       "parentId": "fld_4c524678afa241abb1113faa31fca5b8",
@@ -135,7 +164,7 @@
       "settingRebuildPath": true,
       "settingSendCookies": true,
       "settingStoreCookies": true,
-      "url": "{{ base_url  }}/professional/11",
+      "url": "{{ base_url  }}/professional/50",
       "_type": "request"
     },
     {
@@ -166,7 +195,7 @@
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"email\": \"email teste1\",\n\t\"password\": \"pass1\",\n\t\"isInvestor\": false\n}"
+        "text": "{\n\t\"email\": \"peter@email.com\",\n\t\"password\": \"password\",\n\t\"isInvestor\": false\n}"
       },
       "created": 1588449533467,
       "description": "",
@@ -180,7 +209,7 @@
       "isPrivate": false,
       "metaSortKey": -1588184345043.5,
       "method": "POST",
-      "modified": 1588450405346,
+      "modified": 1588543654843,
       "name": "login",
       "parameters": [],
       "parentId": "fld_4c524678afa241abb1113faa31fca5b8",
@@ -192,6 +221,44 @@
       "settingStoreCookies": true,
       "url": "{{base_url}}/login",
       "_type": "request"
+    },
+    {
+      "_id": "req_8c6f99b6e5dd42bfa3627fe393eba32e",
+      "authentication": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg4NTMyMDcwLCJleHAiOjE1ODkxMzY4NzB9.5NWlrl62tEz2QLN3xgBmPUrz-GKqyaaiRccKRwQ11-c",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1588532410208,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1588184345156,
+      "method": "GET",
+      "modified": 1588532439251,
+      "name": "getProfessionalsRecommended",
+      "parameters": [],
+      "parentId": "fld_34197f9587324d52a0660dabca9e9b04",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/investor/recommended",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_34197f9587324d52a0660dabca9e9b04",
+      "created": 1588449489986,
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1588449489986,
+      "modified": 1588449489986,
+      "name": "Investors",
+      "parentId": "wrk_090ac10c015a48acbfa35616503c3441",
+      "_type": "request_group"
     },
     {
       "_id": "req_6da8ea4c201b436ca7841a26708f17cf",
@@ -217,23 +284,11 @@
       "_type": "request"
     },
     {
-      "_id": "fld_34197f9587324d52a0660dabca9e9b04",
-      "created": 1588449489986,
-      "description": "",
-      "environment": {},
-      "environmentPropertyOrder": null,
-      "metaSortKey": -1588449489986,
-      "modified": 1588449489986,
-      "name": "Investors",
-      "parentId": "wrk_090ac10c015a48acbfa35616503c3441",
-      "_type": "request_group"
-    },
-    {
       "_id": "req_be7ed1da1fac49e898a0f297bc9283d5",
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"name teste1\",\n\t\"email\": \"email teste1\",\n\t\"password\": \"pass1\",\n\t\"phone\": \"phone teste1\",\n\t\"city\": \"city teste1\",\n\t\"uf\": \"ts\"\n}"
+        "text": "{\n\t\"name\": \"gohan\",\n\t\"email\": \"gohan@email.com\",\n\t\"password\": \"password\",\n\t\"phone\": \"77 555 444444\",\n\t\"city\": \"cidade do gohan\",\n\t\"uf\": \"ts\",\n\t\"investor_profile\": \"moderate\"\n}"
       },
       "created": 1587655758170,
       "description": "",
@@ -247,7 +302,7 @@
       "isPrivate": false,
       "metaSortKey": -1588184345081,
       "method": "POST",
-      "modified": 1588449582437,
+      "modified": 1588535684916,
       "name": "create",
       "parameters": [],
       "parentId": "fld_34197f9587324d52a0660dabca9e9b04",
