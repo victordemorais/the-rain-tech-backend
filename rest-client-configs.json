@@ -1,15 +1,50 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2020-05-02T20:59:53.013Z",
+  "__export_date": "2020-05-03T00:44:30.397Z",
   "__export_source": "insomnia.desktop.app:v7.1.1",
   "resources": [
+    {
+      "_id": "req_96db47c969cb474e8d18e4815a7978a4",
+      "authentication": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg4NDY2NjIwLCJleHAiOjE1ODkwNzE0MjB9.y09mwNDikyVCIh8Nex-mUCFLbkgSfniP6DNGVuCBOi0",
+        "type": "bearer"
+      },
+      "body": {},
+      "created": 1588466309988,
+      "description": "",
+      "headers": [],
+      "isPrivate": false,
+      "metaSortKey": -1588449505382,
+      "method": "GET",
+      "modified": 1588466640718,
+      "name": "token test",
+      "parameters": [],
+      "parentId": "wrk_090ac10c015a48acbfa35616503c3441",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "{{ base_url  }}/token-test",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_090ac10c015a48acbfa35616503c3441",
+      "created": 1587653021131,
+      "description": "",
+      "modified": 1587653021131,
+      "name": "simple-login-app",
+      "parentId": null,
+      "_type": "workspace"
+    },
     {
       "_id": "req_03e2e518e0d04431bee3860af045828d",
       "authentication": {},
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"name\": \"name teste1\",\n\t\"email\": \"email teste1\",\n\t\"password\": \"pass1\",\n\t\"phone\": \"phone teste1\",\n\t\"city\": \"city teste1\",\n\t\"uf\": \"ts\"\n}"
+        "text": "{\n\t\"name\": \"name teste3\",\n\t\"email\": \"email teste3\",\n\t\"password\": \"pass3\",\n\t\"phone\": \"phone teste3\",\n\t\"city\": \"city teste3\",\n\t\"uf\": \"ts\"\n}"
       },
       "created": 1588449516995,
       "description": "",
@@ -23,7 +58,7 @@
       "isPrivate": false,
       "metaSortKey": -1588184345143.5,
       "method": "POST",
-      "modified": 1588449550891,
+      "modified": 1588464756078,
       "name": "create",
       "parameters": [],
       "parentId": "fld_4c524678afa241abb1113faa31fca5b8",
@@ -47,15 +82,6 @@
       "name": "Professionals",
       "parentId": "wrk_090ac10c015a48acbfa35616503c3441",
       "_type": "request_group"
-    },
-    {
-      "_id": "wrk_090ac10c015a48acbfa35616503c3441",
-      "created": 1587653021131,
-      "description": "",
-      "modified": 1587653021131,
-      "name": "simple-login-app",
-      "parentId": null,
-      "_type": "workspace"
     },
     {
       "_id": "req_e7ad492898b1469284db618336debe90",

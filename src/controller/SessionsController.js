@@ -1,6 +1,6 @@
 const connection = require("../data/connection");
 const bcrypt = require("bcrypt");
-const auth = require("../Utils/auth");
+const authConfig = require("../utils/authConfig");
 
 module.exports = {
   async login(request, response) {
@@ -19,7 +19,7 @@ module.exports = {
         .then(async function (row) {
           if (row) {
             if (await bcrypt.compare(password, row.password)) {
-              content = { user: row, token: auth.generateToken(row.id) };
+              content = { user: row, token: authConfig.generateToken(row.id) };
             } else {
               content = "Wrong password!";
             }
