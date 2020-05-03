@@ -12,6 +12,6 @@ To be able to test it use a rest client like postman, insomnia and import the fi
 <p align="center">
   <img src="media/database-schema.png" />
 
-> MER representation of data.
+> MER.
 
 </p>
