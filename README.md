@@ -8,10 +8,3 @@ Tips: every time we run yarn run dev, the migrations are updated, if you dont ne
 
 Test:
 To be able to test it use a rest client like postman, insomnia and import the file `rest-client-config.json`. There you will find the requests and example os objects.
-
-<p align="center">
-  <img src="media/database-schema.png" />
-
-> MER.
-
-</p>
