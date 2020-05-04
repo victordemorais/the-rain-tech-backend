@@ -8,19 +8,24 @@
     "knex-rollback": "knex migrate:rollback",
     "test": "test",
     "dev-and-migration": "knex migrate:latest & nodemon ./src/index.js",
-    "dev": "nodemon ./src/index.js",
+    "dev": "knex migrate:latest & node-env-run ./src/index.js --exec nodemon ",
     "start": "node ./src/index.js"
   },
   "author": "the rain tech",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.0",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "twilio-chat": "^3.3.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "node-env-run": "^3.0.2",
+    "nodemon": "^2.0.3",
+    "twilio": "^3.43.0"
   }
 }
