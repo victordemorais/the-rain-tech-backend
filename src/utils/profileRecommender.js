@@ -4,6 +4,7 @@ module.exports = {
     let recommenderProfileOrder = [];
 
     switch (userProfile) {
+      case "agressive":
       case "audacious":
         recommenderProfileOrder = [
           "audacious",
@@ -12,19 +13,11 @@ module.exports = {
           "conservative",
         ];
         break;
-      case "agressive":
-        recommenderProfileOrder = [
-          "agressive",
-          "audacious",
-          "moderate",
-          "conservative",
-        ];
-        break;
       case "moderate":
         recommenderProfileOrder = [
           "moderate",
-          "agressive",
           "conservative",
+          "agressive",
           "audacious",
         ];
         break;
