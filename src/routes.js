@@ -4,6 +4,8 @@ const InvestorsController = require("./controller/InvestorsController");
 const ProfessionalsController = require("./controller/ProfessionalsController");
 const SessionsController = require("../src/controller/SessionsController");
 
+const ChatController = require("../src/controller/ChatController");
+
 const authMiddleware = require("./middlewares/auth");
 
 const routes = express.Router();
@@ -36,6 +38,10 @@ routes.get(
 
 // Session api
 routes.post("/login", SessionsController.login);
+
+// Chat api
+routes.get("/chat", authMiddleware, ChatController.index);
+routes.post("/chat", ChatController.create);
 
 routes.get("/token-test", authMiddleware, (request, response) =>
   response.json({ msg: "ok" })
