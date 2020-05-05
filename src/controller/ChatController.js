@@ -1,11 +1,11 @@
-const connection = require("../data/connection");
+const connection = require('../data/connection');
 
 module.exports = {
   async create(request, response) {
     try {
       const room = `room-${request.body.investor}-${request.body.professional}`;
 
-      await connection("chats").insert({
+      await connection('chats').insert({
         investor: request.body.investor,
         professional: request.body.professional,
         room,
@@ -17,25 +17,28 @@ module.exports = {
         room,
       });
     } catch (error) {
-      response.status(500).json({ error: "Error during create chat." });
+      console.log(error, 'error');
+
+      response.status(500).json({ error: 'Error during create chat.' });
     }
   },
 
   async index(request, response) {
     try {
-      const professional = await connection("chats")
-        .select("*")
-        .where("professional", request.userId);
+      const professional = await connection('chats')
+        .select('*')
+        .where('professional', request.userId);
 
-      const investor = await connection("chats")
-        .select("*")
-        .where("investor", request.userId);
+      const investor = await connection('chats')
+        .select('*')
+        .where('investor', request.userId);
 
       const result = [...professional, ...investor];
 
       return response.json(result);
     } catch (error) {
-      response.status(500).json({ error: "Error during get chats." });
+      console.log(error, 'error');
+      response.status(500).json({ error: 'Error during get chats.' });
     }
   },
 };
